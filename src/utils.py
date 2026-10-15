@@ -14,3 +14,10 @@ def bar_builder(df: pd.DataFrame, ax: Axes) -> None:
     )
     
     ax.set_xticks([n + .26 for n in range(len(df.columns))])
+    
+    
+def probability_counter(df: pd.DataFrame, col_name: str, threshold: int, have_factor: bool = True) -> float: 
+    '''Функция, считающая вероятности успешной сдачи экзамена (80+ баллов) при наличии / отсутствии определенного фактора (аналитический блок 04).'''
+    if have_factor:
+        return df.loc[(df.exam_score >= 80) & (df[col_name] >= threshold)].shape[0] / df.loc[df[col_name] >= threshold].shape[0] * 100
+    return df.loc[(df.exam_score >= 80) & (df[col_name] < threshold)].shape[0] / df.loc[df[col_name] < threshold].shape[0] * 100
