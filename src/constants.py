@@ -19,3 +19,17 @@ group_colors = ['#1f77b4', '#d62728', '#2ca02c', "#ff5100"]  # палитра д
 # 02_05 - лейблы групп для легенды (блок 02_05) 
 YOUNG_LABEL = 'Младшие (17–20 лет)'
 ADULT_LABEL = 'Старшие (21–24 года)'
+
+# 02_06 - словари порогов привычек 
+THRESHOLDS_BAD = {
+    'study': 2,
+    'social': 5,
+    'netflix': 5,
+    'sleep': 5
+}
+THRESHOLDS_GOOD = {
+    'study': 4,
+    'social': 1.5,
+    'netflix': 2,
+    'sleep': 7
+}
